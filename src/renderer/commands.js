@@ -90,9 +90,12 @@ export const commands: Command[] = [
     id: "getAddress",
     exec: getAddress,
     form: [
-      { type: "cryptocurrency", default: bitcoinCurrency },
-      { type: "derivationPath", default: "44'/0'/0'/0/0" },
-      { type: "checkbox", label: "Verify" }
+      {
+        currency: { type: "cryptocurrency", default: bitcoinCurrency },
+        path: { type: "derivationPath", default: "44'/0'/0'/0/0" },
+        derivationMode: { type: "derivationMode", default: "" },
+        verify: { type: "checkbox", label: "Verify" }
+      }
     ]
   }
 ];
